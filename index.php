@@ -20,11 +20,12 @@ include 'function.php';
     <title>Pindai - Pintu Dokumentasi dan Informasi</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/p.png" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <link href="assets/css/flaticon-set.css" rel="stylesheet" />
     <link href="assets/css/magnific-popup.css" rel="stylesheet" />
     <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
@@ -53,7 +54,7 @@ include 'function.php';
 
     <!-- Start Header Top 
     ============================================= -->
-    <div class="top-bar-area inc-border">
+    <!-- <div class="top-bar-area inc-border">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 logo">
@@ -93,14 +94,14 @@ include 'function.php';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Header Top -->
 
     <!-- Header 
     ============================================= -->
     <header id="home">
         <!-- Start Navigation -->
-        <nav class="navbar logo-less attr-border navbar-default navbar-sticky bootsnav">
+        <nav class="navbar  attr-border navbar-default navbar-sticky bootsnav">
             <!-- Start Top Search -->
             <div class="container">
                 <div class="row">
@@ -134,17 +135,52 @@ include 'function.php';
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo.png" class="logo logo-scrolled" alt="Logo">
+                    <a class="navbar" href="/">
+                        <img src="assets/img/pindai.png" class="logo logo-scrolled" width="120" alt="Logo">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-left" data-in="#" data-out="#">
+                    <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
+                        <!-- icon Home -->
+                    <li><a href="?p=beranda"><i class="fa-solid fa-house-user fa-2x"></i></a></li>
+                    <!-- akhir icon Home -->
                         <!-- <li class="active"><a href="./">Beranda</a></li> -->
+                        <!-- dropdown profil organisasi -->
                         <li class="dropdown">
+                            <a href="?q=profil" class="dropdown-toggle" data-toggle="dropdown">Profil Organisasi</a>
+                            <ul class="dropdown-menu">
+                            <li><a class="effect smooth-menu" href="/">struktur organisasi</a></li>
+                            <li><a class="effect smooth-menu" href="/">profil kantor</a></li>
+                            <li><a class="effect smooth-menu" href="/">profil SMD</a></li>
+                            <li><a class="effect smooth-menu" href="/">data pengawasan</a></li>
+                                </ul>
+                        </li>
+                             <!-- Dropdown kinerja -->
+                             <li class="dropdown">
+                            <a href="?q=" class="dropdown-toggle active" data-toggle="dropdown">kinerja</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/">Realisasi anggaran</a></li>
+                                <li><a href="/">capaian kerja</a></li>
+                            </ul>
+                        </li>
+                        <!-- Dropdown playanan publik -->
+                        <li class="dropdown">
+                            <a href="?q=" class="dropdown-toggle active" data-toggle="dropdown">Pelayanan Publik</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/">Pengujian Pihak ketiga</a></li>
+                                <li><a href="/">permohonan SKI/SKE</a></li>
+                                <li><a href="/">informasi dan pengawasan</a></li>
+                                <li><a href="/">UMKM</a></li>
+                            </ul>
+                        </li>
+                        <!--sub menu  -->
+                            <li><a class="effect smooth-menu" href="/">Reformasi Birokrasi</a></li>
+                            <li><a class="effect smooth-menu" href="#daftarAplikasi">Daftar Aplikasi</a></li>
+
+                        <!-- <li class="dropdown">
                             <a href="?p=beranda" class="dropdown-toggle" data-toggle="dropdown">Beranda</a>
                             <ul class="dropdown-menu">
                                 <li><a class="effect smooth-menu" href="#capaianKinerja">Kinerja</a></li>
@@ -154,9 +190,9 @@ include 'function.php';
                                 <li><a class="effect smooth-menu" href="#reformasiBirokrasi">Reformasi Birokrasi</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a href="?q=profil">Profil</a></li>
-                        <li class="dropdown">
+                        </li> -->
+                        <!-- <li><a href="?q=profil">Profil</a></li> -->
+                        <!-- <li class="dropdown">
                             <a href="?q=layanan-sertif" class="dropdown-toggle active" data-toggle="dropdown">Sertifikasi</a>
                             <ul class="dropdown-menu">
                                 <li><a class="effect smooth-menu" href="#simulasi">Simulasi</a></li>
@@ -165,7 +201,7 @@ include 'function.php';
                         </li>
                         <li>
                             <a href="contact.html">contact</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -192,86 +228,66 @@ include 'function.php';
             <div class="row">
                 <div class="f-items default-padding">
                     <!-- Single Item -->
-                    <div class="col-md-4 item">
+                    <div class="col-md-2 item">
                         <div class="f-item">
-                            <img src="assets/img/logo-light.png" alt="Logo">
-                            <p>
-                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke
-                                happy for you are out. Fertile how old address did showing because sitting replied six.
-                                Had arose guest visit going off child.
+                            <img src="assets/img/pindaiputih.png" width="150" alt="Logo">
+                            
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-5 item">
+                        <div class="f-item recent-post">
+                        <p>
+                               Pintu Dokumentasi dan Informasi Balai Besar POM di Manado
                             </p>
-                            <a class="btn btn-light border btn-sm" href="#">View Details</a>
-                            <div class="social">
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="social fa-2x">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="mailto:bpom_manado@pom.go.id"><i class="fas fa-envelope-open"></i></a></li>
+                                    <li><a href="https://www.instagram.com/bpom.manado/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
                                     <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
+                    </div>               <!-- End Single Item -->
                     <!-- Single Item -->
-                    <div class="col-md-4 item">
-                        <div class="f-item recent-post">
-                            <h4>Recent Posts</h4>
-                            <ul>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="assets/img/case/1.jpg" alt="Thumb">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">Debating all she mistaken indulged believed provided declared</a>
-                                        <div class="meta-title">
-                                            <span class="post-date">12 Feb, 2019</span> - By <a href="#">Author</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="assets/img/case/5.jpg" alt="Thumb">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">Future Plan & Strategy for Consutruction </a>
-                                        <div class="meta-title">
-                                            <span class="post-date">18 Mar, 2019</span> - By <a href="#">Author</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="col-md-4 item">
+                    <div class="col-md-5 item">
                         <div class="f-item about">
                             <h4>Contact Info</h4>
                             <ul>
                                 <li>
                                     <i class="fas fa-map-marker-alt"></i>
                                     <p>
-                                        20, floor, Queenslad Victoria Building. 60 california street california USA
+                                    CRJW+423, Jl. Raya Manado Tomohon, Winangun Atas, Kec. Pineleng, Kabupaten Minahasa, Sulawesi Utara
                                     </p>
                                 </li>
                                 <li>
                                     <i class="fas fa-clock"></i>
                                     <p>
-                                        <span>Office Hours: </span> Sat - Thu / 8AM - 10PM
+                                        <span>Office Hours: </span> Monday - Friday / 08:00 - 16:00
                                     </p>
                                 </li>
                                 <li>
                                     <i class="fas fa-envelope-open"></i>
                                     <p>
-                                        <span>Email: </span> <a href="mailto:support@validtheme.com">support@validtheme.com</a>
+                                        <span>Email: </span> <a href="mailto:bpom_manado@pom.go.id">bpom_manado@pom.go.id</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="fab fa-whatsapp"></i>
+                                    <p>
+                                        <span>whatsapp: <a href="https://wa.me/+6281281969799" target="_blank">+62 812 8196 9799</a>
                                     </p>
                                 </li>
                             </ul>
-                            <h2><i class="fas fa-phone"></i> +123 456 7890</h2>
+
                         </div>
                     </div>
                     <!-- End Single Item -->
@@ -279,30 +295,10 @@ include 'function.php';
             </div>
         </div>
         <!-- Start Footer Bottom -->
-        <div class="footer-bottom bg-dark text-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-6">
-                            <p>&copy; Copyright 2019. All Rights Reserved by <a href="#">validthemes</a></p>
+        <div class="footer-bottom  text-light">
+            <div class="container text-center">
+                            <p>&copy; Copyright 2022 | BALAI BESAR PENGAWASAN OBAT DAN MAKANAN MANADO </p>
                         </div>
-                        <div class="col-md-6 text-right link">
-                            <ul>
-                                <li>
-                                    <a href="#">Terms of user</a>
-                                </li>
-                                <li>
-                                    <a href="#">License</a>
-                                </li>
-                                <li>
-                                    <a href="#">Support</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
