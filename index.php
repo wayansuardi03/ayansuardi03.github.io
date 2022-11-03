@@ -48,55 +48,6 @@ include 'function.php';
 
 <body>
 
-    <!-- Preloader Start -->
-    <!-- <div class="se-pre-con"></div> -->
-    <!-- Preloader Ends -->
-
-    <!-- Start Header Top 
-    ============================================= -->
-    <!-- <div class="top-bar-area inc-border">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 logo">
-                    <a href="#">
-                        <img src="assets/img/logo.png" class="logo" alt="Logo">
-                    </a>
-                </div>
-                <div class="col-md-8 text-right">
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <div class="icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="info">
-                                    <span>ULPK</span> +62 812 8196 9799
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="info">
-                                    <span>Sertifikasi</span> +62 812 8196 9799
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <i class="fas fa-envelope-open"></i>
-                                </div>
-                                <div class="info">
-                                    <span>Email</span> bpom_manado@pom.go.id
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Header Top -->
-
     <!-- Header 
     ============================================= -->
     <header id="home">
@@ -178,7 +129,7 @@ include 'function.php';
                         </li>
                         <!--sub menu  -->
                             <li><a class="effect smooth-menu" href="/">Reformasi Birokrasi</a></li>
-                            <li><a class="effect smooth-menu" href="#daftarAplikasi">Daftar Aplikasi</a></li>
+                            <li><a class="effect smooth-menu" href="?q=data">Daftar Aplikasi</a></li>
 
                         <!-- <li class="dropdown">
                             <a href="?p=beranda" class="dropdown-toggle" data-toggle="dropdown">Beranda</a>

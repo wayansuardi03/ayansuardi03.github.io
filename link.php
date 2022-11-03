@@ -22,6 +22,9 @@ if (!empty($page)) {
         case 'profil':
             include './pages/profil/profil.php';
             break;
+        case 'data':
+            include './pages/data/data.php';
+            break;
 
         case '_register':
             include 'register.php';
