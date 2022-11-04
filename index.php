@@ -20,6 +20,7 @@ include 'function.php';
     <title>Pindai - Pintu Dokumentasi dan Informasi</title>
 
     <!-- ========== Favicon Icon ========== -->
+    
     <link rel="shortcut icon" href="assets/img/p.png" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
@@ -38,12 +39,24 @@ include 'function.php';
     <link href="assets/css/chart-kategori-konsumen.css" rel="stylesheet">
     <link href="assets/css/chart-penindakan.css" rel="stylesheet">
     <link href="assets/css/chart-struktur-org.css" rel="stylesheet">
+     <!-- font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+
     <!-- ========== End Stylesheet ========== -->
 
     <!-- ========== Google Fonts ========== -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;display=swap" rel="stylesheet">
 
+    <!-- profil kantor -->
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./assets/css/kantor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+   
 </head>
 
 <body>
@@ -104,9 +117,9 @@ include 'function.php';
                             <a href="?q=profil" class="dropdown-toggle" data-toggle="dropdown">Profil Organisasi</a>
                             <ul class="dropdown-menu">
                             <li><a class="effect smooth-menu" href="/">struktur organisasi</a></li>
-                            <li><a class="effect smooth-menu" href="/">profil kantor</a></li>
+                            <li><a class="effect smooth-menu" href="?q=profil_kantor">profil kantor</a></li>
                             <li><a class="effect smooth-menu" href="/">profil SMD</a></li>
-                            <li><a class="effect smooth-menu" href="/">data pengawasan</a></li>
+                            <li><a class="effect smooth-menu" href="">data pengawasan</a></li>
                                 </ul>
                         </li>
                              <!-- Dropdown kinerja -->
@@ -129,7 +142,7 @@ include 'function.php';
                         </li>
                         <!--sub menu  -->
                             <li><a class="effect smooth-menu" href="/">Reformasi Birokrasi</a></li>
-                            <li><a class="effect smooth-menu" href="?q=data">Daftar Aplikasi</a></li>
+                            <li><a class="effect smooth-menu" href="#daftarAplikasi">Daftar Aplikasi</a></li>
 
                         <!-- <li class="dropdown">
                             <a href="?p=beranda" class="dropdown-toggle" data-toggle="dropdown">Beranda</a>
@@ -165,6 +178,62 @@ include 'function.php';
     include 'link.php';
     ?>
 
+<!-- daftar apliksi -->
+
+<div id="daftarAplikasi" class="services-area thumb-less default-padding bottom-less">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-heading text-center">
+                    <h2>Daftar Aplikasi</h2>
+                    <p>
+                        While mirth large of on front. Ye he greater related adapted proceed entered an. Through it
+                        examine express promise no. Past add size game cold girl off how old
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="service-items">
+                <?php
+                include 'assets/conf/koneksi-pindai.php';
+                $no = 1;
+                $sqlDataApp = mysqli_query($koneksi, "SELECT * FROM tbl_app ORDER BY id_app");
+                while ($apps = mysqli_fetch_assoc($sqlDataApp)) {
+                    $aplikasi = $apps['nama_app'];
+                    $kategori = $apps['kategori_app'];
+                    $jenis = $apps['sub_kategori_app'];
+                    $tautan = $apps['link'];
+                    $catatan = $apps['catatan'];
+                ?>
+                <div class="col-md-4 col-sm-6 equal-height">
+                    <div class="item">
+                        <div class="icon">
+                            <a href="<?= $tautan; ?>" target="_blank">
+                                <i class="flaticon-analysis-2"></i>
+                            </a>
+                        </div>
+                        <div class="info">
+                            <span><?= $no++; ?></span>
+                            <h4>
+                                <a href="<?= $tautan; ?>" target="_blank">
+                                    <?= $aplikasi; ?>
+                                </a>
+                            </h4>
+                            <h5><?= $tautan; ?></h5>
+                            <p>
+                                <?= $catatan; ?>
+                            </p>
+                            <b><?= $kategori; ?> / <?= $jenis; ?> <br></b>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End daftar aplikasi-->
     <div class="maps-area">
         <div class="container-full">
             <div class="row">
@@ -201,10 +270,12 @@ include 'function.php';
                         <br>
                         <div class="social fa-2x">
                                 <ul>
-                                    <li><a href="mailto:bpom_manado@pom.go.id"><i class="fas fa-envelope-open"></i></a></li>
+                                    <li><a href="mailto:bpom_manado@pom.go.id"  target="_blank"><i class="fas fa-envelope-open"></i></a></li>
                                     <li><a href="https://www.instagram.com/bpom.manado/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                    <li><a href="https://twitter.com/BPOMManado"  target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://web.facebook.com/bpom.manado"  target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCa8HeAxnCotYzVbitojEWIQ"  target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="https://bpommanado.id/" target="_blank"><i class="fa-solid fa-house"></i></a></li>
                                 </ul>
                             </div>
                     </div>               <!-- End Single Item -->
