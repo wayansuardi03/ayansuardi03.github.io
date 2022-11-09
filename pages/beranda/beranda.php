@@ -220,47 +220,70 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                            $no = 1;
-                                            $bulan = $_POST['bulan'];
-                                            $tahun = $_POST['tahun'];
-                                            if ($tahun != "" || $bulan = "") {
-                                                $dataIndikator = mysqli_query(
-                                                    $connDiki,
-                                                    "SELECT * FROM indikator
-                                                                INNER JOIN tbl_sasaran_strategis
-                                                                ON indikator.sastraId = tbl_sasaran_strategis.id_sasaran_strategis
-                                                                INNER JOIN realisasi
-                                                                ON indikator.IDIndikator = realisasi.IDIndikator
-                                                                WHERE indikator.sastraId = tbl_sasaran_strategis.id_sasaran_strategis AND indikator.tahun = '$tahun' AND realisasi.NamaBulan = '$bulan'
-                                                                GROUP BY  indikator.NamaIndikator "
-                                                );
-                                                if (mysqli_num_rows($dataIndikator) > 0) {
-                                                    while ($indikator = mysqli_fetch_assoc($dataIndikator)) {
-                                                        $judulIndikator = $indikator['NamaIndikator'];
-                                                        $capaianStrategis = $indikator['TargetBulanan'];
-                                            ?>
-                                    <tr>
-                                        <td><?= $no++; ?>. </td>
-                                        <td class="text-left"><?= $judulIndikator; ?></td>
-                                        <td <?php if ($capaianStrategis >= 90 && $capaianStrategis <= 110) { ?>
-                                            class="bg-success" <?php } ?>
-                                            <?php if ($capaianStrategis >= 70 && $capaianStrategis <= 90) { ?>
-                                            class="bg-warning" <?php } ?>
-                                            <?php if ($capaianStrategis >= 50 && $capaianStrategis <= 70) { ?>
-                                            class="bg-danger" <?php } ?> <?php if ($capaianStrategis > 120) { ?>
-                                            class="bg-info" <?php } ?>>
-                                            <?= $capaianStrategis; ?></td>
-                                    </tr>
-                                    <?php
-                                                    }
-                                                }
-                                            }
-                                            ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                                      $no = 1;
+                                      $bulan = $_POST['bulan'];
+                                      //  = $_POST[''];
+                                      // $bulan = 'B4'; //padahal mneer so hardcode disini.. tapi faktanya bulan teten B1
+                                      $tahun = $_POST['tahun'];
+  
+                                      if ($tahun != "" || $bulan = "") {
+                                          $dataIndikator = mysqli_query(
+                                              $connDiki,
+                                              "SELECT i.NamaIndikator
+                                                      , i.TargetBulanan, i.tahun
+                                                      , i.b1, i.b2, i.b3, i.b4, i.b5, i.b6, i.b7, i.b8, i.b9, i.b10, i.b11, i.b12
+                                                  FROM indikator i
+                                                          INNER JOIN tbl_sasaran_strategis ss
+                                                          ON i.sastraId = ss.id_sasaran_strategis
+                                                          INNER JOIN realisasi r
+                                                          ON i.IDIndikator = r.IDIndikator
+                                                          WHERE i.tahun = '$tahun'
+                                                          GROUP BY  i.NamaIndikator "
+                                          );
+                                          if (mysqli_num_rows($dataIndikator) > 0) {
+                                              while ($indikator = mysqli_fetch_assoc($dataIndikator)) {
+                                                  $judulIndikator = $indikator['NamaIndikator'];
+                                                  if ($bulan == 'B1') {
+                                                      $capaianStrategis = $indikator['b1'];
+                                                  }elseif ($bulan == 'B2') {
+                                                      $capaianStrategis = $indikator['b2'];
+                                                  }elseif ($bulan == 'B3') {
+                                                      $capaianStrategis = $indikator['b3'];
+                                                  }elseif ($bulan == 'B4') {
+                                                      $capaianStrategis = $indikator['b4'];
+                                                  }elseif ($bulan == 'B5') {
+                                                      $capaianStrategis = $indikator['b5'];
+                                                  }elseif ($bulan == 'B6') {
+                                                      $capaianStrategis = $indikator['b6'];
+                                                  }elseif ($bulan == 'B7') {
+                                                      $capaianStrategis = $indikator['b7'];
+                                                  }elseif ($bulan == 'B8') {
+                                                      $capaianStrategis = $indikator['b8'];
+                                                  }
+  
+                                          ?>
+                                      <tr>
+                                          <td><?= $no++; ?>. </td>
+                                          <td class="text-left"><?= $judulIndikator; ?></td>
+                                          <td <?php if ($capaianStrategis >= 90 && $capaianStrategis <= 110) { ?>
+                                              class="bg-success" <?php } ?>
+                                              <?php if ($capaianStrategis >= 70 && $capaianStrategis <= 90) { ?>
+                                              class="bg-warning" <?php } ?>
+                                              <?php if ($capaianStrategis >= 50 && $capaianStrategis <= 70) { ?>
+                                              class="bg-danger" <?php } ?> <?php if ($capaianStrategis > 120) { ?>
+                                              class="bg-info" <?php } ?>>
+                                              <?= $capaianStrategis; ?></td>
+                                      </tr>
+                                      <?php
+                                                      }
+                                                  }
+                                              }
+                                              ?>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
                 <?php endwhile; ?>
                 <?php } else { ?>
                 <div class="col-lg-12 col-md-12 single-item">
@@ -293,10 +316,14 @@
                     <div id="container"></div>
                 </figure>
             </div>
-            <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
-                <div class="site-heading text-center">
-                    <h2>Pengawasan Obat dan Makanan</h2>
-                    <p>Trend Capaian Kinerja Perkara</p>
+        </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
+                    <div class="site-heading text-center">
+                        <br> <br>
+                        <h2>Pengawasan Obat dan Makanan</h2>
+                        <p>Trend Capaian Kinerja Perkara</p>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -309,7 +336,6 @@
                     </p>
                 </figure>
             </div>
-        </div>
     </div>
 </div>
 

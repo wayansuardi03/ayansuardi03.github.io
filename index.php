@@ -119,7 +119,7 @@ include 'function.php';
                             <li><a class="effect smooth-menu" href="/">struktur organisasi</a></li>
                             <li><a class="effect smooth-menu" href="?q=profil_kantor">profil kantor</a></li>
                             <li><a class="effect smooth-menu" href="/">profil SMD</a></li>
-                            <li><a class="effect smooth-menu" href="">data pengawasan</a></li>
+                            <li><a class="effect smooth-menu" href="/">data pengawasan</a></li>
                                 </ul>
                         </li>
                              <!-- Dropdown kinerja -->
